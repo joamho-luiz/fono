@@ -17,16 +17,51 @@
         document.getElementById("digitado").addEventListener("input", function() {
             let texto = this.value;
 
-            let convertido = texto.replace(/[aeiou]/gi, function(vogal){
+            let convertido = texto.replace(/[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]/g, function(letras){
                 const mapa = {
-                    'a': '1',  
-                    'e': '2', 
-                    'i': '3', 
-                    'o': '4', 
-                    'u': '5'
+                    'a': 'a', 'A': 'ɐ',
+                    'b': 'b', 'B': '',
+                    'c': '', 'C': '',
+                    'd': 'd', 'D': 'dʒ',
+                    'e': 'e', 'E': 'ɛ',
+                    'f': 'f', 'F': '',
+                    'g': 'g', 'G': 'ɣ',
+                    'h': 'h', 'H': 'ɦ',
+                    'i': 'i', 'I': 'ɪ',
+                    'j': 'j', 'J': '',
+                    'k': 'k', 'K': 'ʁ',
+                    'l': 'l', 'L': 'ɫ',
+                    'm': 'm', 'M': '',
+                    'n': 'n', 'N': 'ɲ',
+                    'o': 'o', 'O': 'ɔ',
+                    'p': 'p', 'P': 'ɽ',
+                    'q': '\'', 'Q': '',
+                    'r': 'r', 'R': 'ɾ',
+                    's': 's', 'S': 'ʃ',
+                    't': 't', 'T': 'tʃ',
+                    'u': 'u', 'U': 'ʊ',
+                    'v': 'v', 'V': '',
+                    'w': 'w', 'W': '',
+                    'x': 'x', 'X': 'χ',
+                    'y': '', 'Y': 'ʎ',
+                    'z': 'z', 'Z': 'ʒ'
                 };
-                return mapa[vogal.toLowerCase()];
-            });
+                return mapa[letras];
+            }).replace(/[0123456789]/gi, function(numeros) {
+                const mapa = {
+                    '0': '',
+                    '1': 'ɐ̃',
+                    '2': 'ẽ',
+                    '3': 'ĩ',
+                    '4': 'õ',
+                    '5': 'ũ',
+                    '6': '',
+                    '7': 'j̃',
+                    '8': 'w̃',
+                    '9': '',
+                };
+                return mapa[numeros];
+            }).replace(/~e/g, "ẽ").replace(/~i/g, "ĩ").replace(/~u/g, "ũ").replace(/~j/g, "j̃").replace(/~w/g, "w̃");
 
             this.value = convertido;
         });
