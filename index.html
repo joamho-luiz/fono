@@ -8,15 +8,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teclado Fonético</title>
+    
 </head>
 
 <body>
-    <input type="text" id="digitado" placeholder="Digite sua transcrição aqui.">
-    
+    <Section id="texto">
+        <h1>Digite símbolos fonéticos do português brasileiro</h1>
+        <input type="text" id="digitado" placeholder="[di'gitʃɪ suɐ tɾãskɾi'sɐ̃ũ a'ki]">
+    </Section>
+
+    <section id="imagem">
+        <h2>Para digitar o símbolo desejado</h2>
+        <p>Use o carácter ao lado do símbolo.</p>
+        <p>(verde: são diretos, amarelos: são intuitivos, azul: são números e vermelho demandam atenção)</p>
+        <img src="tabela.gif" alt="Conversão para símbolos do Alfabeto Fonético Internacional">
+    </section>
+
     <script>
         document.getElementById("digitado").addEventListener("input", function() {
             let texto = this.value;
-
             let convertido = texto.replace(/[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]/g, function(letras){
                 const mapa = {
                     'a': 'a', 'A': 'ɐ',
@@ -35,7 +45,7 @@
                     'n': 'n', 'N': 'ɲ',
                     'o': 'o', 'O': 'ɔ',
                     'p': 'p', 'P': 'ɽ',
-                    'q': '\'', 'Q': '',
+                    'q': 'ˈ', 'Q': '',
                     'r': 'r', 'R': 'ɾ',
                     's': 's', 'S': 'ʃ',
                     't': 't', 'T': 'tʃ',
@@ -62,7 +72,6 @@
                 };
                 return mapa[numeros];
             }).replace(/~e/g, "ẽ").replace(/~i/g, "ĩ").replace(/~u/g, "ũ").replace(/~j/g, "j̃").replace(/~w/g, "w̃");
-
             this.value = convertido;
         });
     </script>
