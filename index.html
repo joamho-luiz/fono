@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--Florianópolis, 30 de março de 2025-->
+<!--Código para tornar mais fácil a digitação de símbolos do IPA-->
+<!--Por: João Luiz de Lara-->
+<html lang="pt" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado Fonético</title>
+</head>
+
+<body>
+    <input type="text" id="digitado" placeholder="Digite sua transcrição aqui.">
+    
+    <script>
+        document.getElementById("digitado").addEventListener("input", function() {
+            let texto = this.value;
+
+            let convertido = texto.replace(/[aeiou]/gi, function(vogal){
+                const mapa = {
+                    'a': '1',  
+                    'e': '2', 
+                    'i': '3', 
+                    'o': '4', 
+                    'u': '5'
+                };
+                return mapa[vogal.toLowerCase()];
+            });
+
+            this.value = convertido;
+        });
+    </script>
+</body>
+
+</html>
