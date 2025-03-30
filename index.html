@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teclado Fonético</title>
-    
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
@@ -18,8 +18,7 @@
     </Section>
 
     <section id="imagem">
-        <h2>Para digitar o símbolo desejado</h2>
-        <p>Use o carácter ao lado do símbolo.</p>
+        <h2>Para digitar o símbolo desejado use o carácter ao lado do símbolo.</h2>
         <p>(verde: são diretos, amarelos: são intuitivos, azul: são números e vermelho demandam atenção)</p>
         <img src="tabela.gif" alt="Conversão para símbolos do Alfabeto Fonético Internacional">
     </section>
@@ -30,21 +29,21 @@
             let convertido = texto.replace(/[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]/g, function(letras){
                 const mapa = {
                     'a': 'a', 'A': 'ɐ',
-                    'b': 'b', 'B': '',
+                    'b': 'b', 'B': 'ʁ',
                     'c': '', 'C': '',
                     'd': 'd', 'D': 'dʒ',
                     'e': 'e', 'E': 'ɛ',
                     'f': 'f', 'F': '',
-                    'g': 'g', 'G': 'ɣ',
+                    'g': 'g', 'G': 'ɡʷ',
                     'h': 'h', 'H': 'ɦ',
                     'i': 'i', 'I': 'ɪ',
-                    'j': 'j', 'J': '',
-                    'k': 'k', 'K': 'ʁ',
+                    'j': 'j', 'J': 'ɽ',
+                    'k': 'k', 'K': 'kʷ',
                     'l': 'l', 'L': 'ɫ',
                     'm': 'm', 'M': '',
                     'n': 'n', 'N': 'ɲ',
                     'o': 'o', 'O': 'ɔ',
-                    'p': 'p', 'P': 'ɽ',
+                    'p': 'p', 'P': '',
                     'q': 'ˈ', 'Q': '',
                     'r': 'r', 'R': 'ɾ',
                     's': 's', 'S': 'ʃ',
@@ -53,7 +52,7 @@
                     'v': 'v', 'V': '',
                     'w': 'w', 'W': '',
                     'x': 'x', 'X': 'χ',
-                    'y': '', 'Y': 'ʎ',
+                    'y': 'ɣ', 'Y': 'ʎ',
                     'z': 'z', 'Z': 'ʒ'
                 };
                 return mapa[letras];
