@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--Florianópolis, 30 de março de 2025-->
+<!--Código para tornar mais fácil a digitação de símbolos do IPA-->
+<!--Por: João Luiz de Lara-->
+<html lang="pt" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado Fonético</title>
+    <link rel="stylesheet" href="computador.css">
+</head>
+
+<body>
+    <div id="geral">
+        <h1>Digite sua transcrição abaixo</h1>
+        <textarea spellcheck="false" type="text" id="digitado" placeholder="[di'gitʃɪ suɐ tɾãskɾi'sɐ̃ũ a'ki]"></textarea>
+        <div id="texto">
+            <p>Use seu teclado para digitar símbolos fonéticos do português brasileiro. Use a tabela abaixo para identificar a letra (Maiúscula ou minúsculas) que você deve utilizar. Note que símbolos em:</p>
+            <ul type="disc" id="lista">
+                <li>Verde: são diretos (letras minusculas),</li>
+                <li>Amarelo: são intuitivos (letras maiúsculas),</li>
+                <li>Vermelho: demandam atenção (letras mistas),</li>
+                <li>Azul: sons vocálicos nasais (números ou [~ + letra]).</li>
+            </ul>
+        </div>
+        <img src="tabela2.gif" alt="Conversão para símbolos do Alfabeto Fonético Internacional">
+        </section>
+    </div>
+
+    <script>
+        document.getElementById("digitado").addEventListener("input", function() {
+            let texto = this.value;
+            let convertido = texto.replace(/[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]/g, function(letras){
+                const mapa = {
+                    'a': 'a', 'A': 'ɐ',
+                    'b': 'b', 'B': 'ʁ',
+                    'c': '', 'C': '',
+                    'd': 'd', 'D': 'dʒ',
+                    'e': 'e', 'E': 'ɛ',
+                    'f': 'f', 'F': '',
+                    'g': 'g', 'G': 'ɡʷ',
+                    'h': 'h', 'H': 'ɦ',
+                    'i': 'i', 'I': 'ɪ',
+                    'j': 'j', 'J': 'ɽ',
+                    'k': 'k', 'K': 'kʷ',
+                    'l': 'l', 'L': 'ɫ',
+                    'm': 'm', 'M': '',
+                    'n': 'n', 'N': 'ɲ',
+                    'o': 'o', 'O': 'ɔ',
+                    'p': 'p', 'P': '',
+                    'q': 'ˈ', 'Q': '',
+                    'r': 'r', 'R': 'ɾ',
+                    's': 's', 'S': 'ʃ',
+                    't': 't', 'T': 'tʃ',
+                    'u': 'u', 'U': 'ʊ',
+                    'v': 'v', 'V': '',
+                    'w': 'w', 'W': '',
+                    'x': 'x', 'X': 'χ',
+                    'y': 'ɣ', 'Y': 'ʎ',
+                    'z': 'z', 'Z': 'ʒ'
+                };
+                return mapa[letras];
+            }).replace(/[0123456789]/gi, function(numeros) {
+                const mapa = {
+                    '0': '',
+                    '1': 'ɐ̃',
+                    '2': 'ẽ',
+                    '3': 'ĩ',
+                    '4': 'õ',
+                    '5': 'ũ',
+                    '6': '',
+                    '7': 'j̃',
+                    '8': 'w̃',
+                    '9': '',
+                };
+                return mapa[numeros];
+            }).replace(/~e/g, "ẽ").replace(/~i/g, "ĩ").replace(/~u/g, "ũ").replace(/~j/g, "j̃").replace(/~w/g, "w̃");
+            this.value = convertido;
+        });
+    </script>
+</body>
+
+</html>
