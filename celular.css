@@ -1,16 +1,11 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgba(30, 28, 28, 0.787);
-    /* background-color: rgb(216, 209, 192);*/
-    /* background: pink; */
-    font-size: 14pt;
-    /* height: 100vh; */
+    background: pink;
+    font-size: 10pt;
     /* overflow: hidden; */
-    display: flex;
-    flex-direction: column;
     text-align: center;
     justify-content: center;
-    align-items: center;
 }
 h1{
     text-align: center;
@@ -20,24 +15,25 @@ input{
     font-size: 16pt;
     width: 85vw;
     /* max-width: 40vw; */
-    height: 30vh;
+    height: 10vh;
     /* max-width: 40vw; */
     background-color: white;
     padding: 15pt;
 }
 div#texto{
-    /* width: 100vw; */
+    width: 90vw;
     line-height: 15pt;
-    text-align: center;
+    position: relative;
+    padding: 10pt;
+    font-style: italic;
 }
 ul, p{
-    text-align: left;
+    text-align: justify;
 }
 div#imagem{
     overflow-x: scroll;
 }
 img{
-    /* width: 1000px; */
-    max-height: 40vh;
+    width: 99vw;
     overflow-x: scroll;
 }
