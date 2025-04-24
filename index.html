@@ -12,16 +12,21 @@
 </head>
 
 <body>
-    <Section id="texto">
-        <h1>Digite símbolos fonéticos do português brasileiro</h1>
-        <input type="text" id="digitado" placeholder="[di'gitʃɪ suɐ tɾãskɾi'sɐ̃ũ a'ki]">
-    </Section>
-
-    <section id="imagem">
-        <h2>Para digitar o símbolo desejado use o carácter ao lado do símbolo.</h2>
-        <p>(verde: são diretos, amarelos: são intuitivos, azul: são números e vermelho demandam atenção)</p>
-        <img src="tabela.gif" alt="Conversão para símbolos do Alfabeto Fonético Internacional">
-    </section>
+    <div id="geral">
+        <h1>Digite sua transcrição abaixo</h1>
+        <textarea spellcheck="false" type="text" id="digitado" placeholder="[di'gitʃɪ suɐ tɾãskɾi'sɐ̃ũ a'ki]"></textarea>
+        <div id="texto">
+            <p>Use seu teclado para digitar símbolos fonéticos do português brasileiro. Use a tabela abaixo para identificar a letra (Maiúscula ou minúsculas) que você deve utilizar. Note que símbolos em:</p>
+            <ul type="disc" id="lista">
+                <li>Verde: são diretos (letras minusculas),</li>
+                <li>Amarelo: são intuitivos (letras maiúsculas),</li>
+                <li>Vermelho: demandam atenção (letras mistas),</li>
+                <li>Azul: sons vocálicos nasais (números ou [~ + letra]).</li>
+            </ul>
+        </div>
+        <img src="tabela2.gif" alt="Conversão para símbolos do Alfabeto Fonético Internacional">
+        </section>
+    </div>
 
     <script>
         document.getElementById("digitado").addEventListener("input", function() {
