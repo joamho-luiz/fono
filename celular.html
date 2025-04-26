@@ -36,7 +36,7 @@
             let convertido = texto.replace(/[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]/g, function(letras){
                 const mapa = {
                     'a': 'a', 'A': 'ɐ',
-                    'b': 'b', 'B': 'ʁ',
+                    'b': 'b', 'B': '',
                     'c': '', 'C': '',
                     'd': 'd', 'D': 'dʒ',
                     'e': 'e', 'E': 'ɛ',
@@ -58,7 +58,7 @@
                     'u': 'u', 'U': 'ʊ',
                     'v': 'v', 'V': '',
                     'w': 'w', 'W': '',
-                    'x': 'x', 'X': 'χ',
+                    'x': 'x', 'X': '',
                     'y': 'ɣ', 'Y': 'ʎ',
                     'z': 'z', 'Z': 'ʒ'
                 };
@@ -77,7 +77,7 @@
                     '9': '',
                 };
                 return mapa[numeros];
-            }).replace(/~e/g, "ẽ").replace(/~i/g, "ĩ").replace(/~u/g, "ũ").replace(/~j/g, "j̃").replace(/~w/g, "w̃");
+            }).replace(/ã/g, "ɐ̃").replace(/~e/g, "ẽ").replace(/~i/g, "ĩ").replace(/~u/g, "ũ").replace(/~j/g, "j̃").replace(/~w/g, "w̃");
             this.value = convertido;
         });
     </script>
